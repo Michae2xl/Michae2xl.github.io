@@ -1,11 +1,14 @@
 :root {
   --yellow: #F5B800;
+  --bright-yellow: #FFD700;
   --dark-yellow: #D4A000;
   --black: #000000;
-  --dark-gray: #1a1a1a;
-  --light-gray: #333;
+  --dark-gray: #0a0a0a;
+  --medium-gray: #1a1a1a;
+  --light-gray: #2a2a2a;
   --white: #ffffff;
-  --text-gray: #666;
+  --text-yellow: #FFD700;
+  --text-gray: #999;
 }
 
 * {
@@ -18,20 +21,20 @@ body {
   font-family: 'Courier Prime', monospace;
   font-size: 17px;
   line-height: 1.6;
-  background: var(--white);
-  color: var(--black);
+  background: var(--black);
+  color: var(--text-yellow);
   padding: 0;
   margin: 0;
 }
 
 a {
-  color: inherit;
+  color: var(--yellow);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--yellow);
+  color: var(--bright-yellow);
 }
 
 .wrap {
@@ -40,7 +43,7 @@ a:hover {
   padding: 3rem 1.5rem 5rem;
 }
 
-/* Navigation FABs - Minimal and clean */
+/* Navigation FABs */
 .nav-fabs {
   position: fixed;
   bottom: 2rem;
@@ -54,25 +57,29 @@ a:hover {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2px solid var(--black);
-  background: var(--yellow);
+  border: 2px solid var(--yellow);
+  background: var(--black);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 0 20px rgba(245, 184, 0, 0.3);
 }
 
 .nav-fabs button:hover {
-  background: var(--dark-yellow);
+  background: var(--yellow);
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 0 30px rgba(245, 184, 0, 0.6);
 }
 
 .nav-fabs button svg {
   width: 22px;
   height: 22px;
+  stroke: var(--yellow);
+}
+
+.nav-fabs button:hover svg {
   stroke: var(--black);
 }
 
@@ -82,24 +89,26 @@ a:hover {
   }
 }
 
-/* Chips - Clean minimal style */
+/* Chips */
 .chip {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: 20px;
-  border: 2px solid var(--black);
+  border: 2px solid var(--yellow);
   font-weight: 600;
   font-size: 0.9rem;
-  background: var(--white);
+  background: var(--black);
+  color: var(--yellow);
   transition: all 0.3s ease;
 }
 
 .chip:hover {
   background: var(--yellow);
+  color: var(--black);
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 0 20px rgba(245, 184, 0, 0.4);
 }
 
 .chip svg {
@@ -108,14 +117,14 @@ a:hover {
   flex-shrink: 0;
 }
 
-/* Header / Avatar - Clean and minimal */
+/* Header / Avatar */
 .top {
   display: flex;
   align-items: center;
   gap: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   padding-bottom: 2rem;
-  border-bottom: 2px solid var(--black);
+  border-bottom: 2px solid var(--yellow);
 }
 
 .top .avatar {
@@ -123,29 +132,35 @@ a:hover {
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--black);
+  border: 3px solid var(--yellow);
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 0 30px rgba(245, 184, 0, 0.5);
 }
 
 .top .info h1 {
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  color: var(--black);
+  color: var(--bright-yellow);
 }
 
 .top .info p.lead {
   font-size: 1.1rem;
-  color: var(--text-gray);
-  margin-bottom: 0.5rem;
+  color: var(--text-yellow);
+  margin-bottom: 0.75rem;
   line-height: 1.7;
 }
 
-.top .info p {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--light-gray);
+.top .info .experience {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  background: var(--medium-gray);
+  border: 2px solid var(--yellow);
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--yellow);
 }
 
 @media (max-width: 700px) {
@@ -165,7 +180,33 @@ a:hover {
   }
 }
 
-/* Social buttons - Clean grid layout */
+/* Privacy code style */
+.privacy-code {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background: var(--dark-gray);
+  border: 2px solid var(--yellow);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(245, 184, 0, 0.2);
+}
+
+.privacy-code code {
+  font-family: 'Courier Prime', monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--bright-yellow);
+  text-shadow: 0 0 10px rgba(245, 184, 0, 0.5);
+  letter-spacing: 2px;
+}
+
+@media (max-width: 600px) {
+  .privacy-code code {
+    font-size: 1.2rem;
+  }
+}
+
+/* Social buttons */
 .social {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -190,25 +231,25 @@ a:hover {
   margin-top: 3rem;
 }
 
-/* Card list - Minimal clean cards */
-.list {
+/* Two cards side by side */
+.list-two {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 
-@media (max-width: 700px) {
-  .list {
+@media (max-width: 768px) {
+  .list-two {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 }
 
 .card {
-  border: 2px solid var(--black);
+  border: 2px solid var(--yellow);
   border-radius: 12px;
   padding: 2rem;
-  background: var(--white);
+  background: var(--dark-gray);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -233,14 +274,15 @@ a:hover {
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 0 30px rgba(245, 184, 0, 0.3);
+  background: var(--medium-gray);
 }
 
 .card h3 {
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
-  color: var(--black);
+  color: var(--bright-yellow);
 }
 
 .card .meta {
@@ -262,12 +304,12 @@ a:hover {
   padding: 0.4rem 0.9rem;
 }
 
-/* Footer - Minimal */
+/* Footer */
 footer {
   margin-top: 5rem;
   padding: 2.5rem 1rem;
   text-align: center;
-  border-top: 2px solid var(--black);
+  border-top: 2px solid var(--yellow);
 }
 
 .footer-inner {
@@ -304,4 +346,22 @@ html {
 ::selection {
   background: var(--yellow);
   color: var(--black);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--yellow);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bright-yellow);
 }
