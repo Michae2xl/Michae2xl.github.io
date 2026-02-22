@@ -1,0 +1,261 @@
+:root {
+  --pink: #f9c;
+  --green: #9f9;
+  --yellow: #ff6;
+  --black: #111;
+  --white: #fff;
+  --gray: #666;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Courier Prime', monospace;
+  font-size: 17px;
+  line-height: 1.5;
+  background: var(--white);
+  color: var(--black);
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+/* Navigation FABs */
+.nav-fabs {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 100;
+}
+
+.nav-fabs button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--black);
+  background: var(--white);
+  box-shadow: 2px 2px 0 var(--black);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.nav-fabs button:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 0 var(--black);
+}
+
+.nav-fabs button svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 768px) {
+  .nav-fabs {
+    display: none;
+  }
+}
+
+/* Chips (nav buttons, tags, filters, social) */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: 1.5rem;
+}
+
+.chip {
+  display: inline-block;
+  padding: .35rem .85rem;
+  border-radius: 12px;
+  border: 2px solid var(--black);
+  font-weight: bold;
+  font-size: .9rem;
+  background: var(--white);
+  box-shadow: 2px 2px 0 var(--black);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 0 var(--black);
+  text-decoration: none;
+}
+
+.chip.pink { background: var(--pink); }
+.chip.green { background: var(--green); }
+.chip.yellow { background: var(--yellow); }
+
+/* Header / Avatar */
+.top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: .25rem;
+  margin-bottom: .5rem;
+}
+
+.top .avatar {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ddd;
+  box-shadow: 2px 2px 0 var(--black);
+  flex-shrink: 0;
+}
+
+.top .info h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.top .info p.lead {
+  font-size: 1rem;
+  color: var(--gray);
+  margin-bottom: .35rem;
+}
+
+.top .info p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .top {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .top .avatar {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .top .info h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Social buttons */
+.social {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+.social .chip {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.social .chip svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Section */
+.section {
+  margin-top: 2rem;
+}
+
+/* Card list */
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  border: 3px solid var(--black);
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: var(--white);
+  box-shadow: 4px 4px 0 var(--black);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0 var(--black);
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.card .meta {
+  font-size: 0.95rem;
+  color: var(--gray);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.card p:last-child {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Footer */
+footer {
+  margin-top: 4rem;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-top: 2px solid var(--black);
+}
+
+.footer-inner {
+  font-size: 0.9rem;
+  color: var(--gray);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  
+  .wrap {
+    padding: 1.5rem 1rem 3rem;
+  }
+  
+  .card {
+    padding: 1.25rem;
+  }
+}
